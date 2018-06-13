@@ -10,9 +10,9 @@ class Block{
 
 	toString(){
 
-		return `Block - 
+		return `Block -
 		    Timestamp: ${this.timestamp}
-		    Last Hash: ${this.lastHash.substring(0,10)}      
+		    Last Hash: ${this.lastHash.substring(0,10)}
 		    Hash     : ${this.hash.substring(0,10)}
 		    Data     : ${this.data}`;
 	}
@@ -20,6 +20,16 @@ class Block{
 
 	static genesis() {
 		return new this('Genesis time', '-------','f1r57-h45h',[]);
+	}
+
+	static mineBlock(lastBlock, data){
+		const timestamp = Date.now();
+		const lastHash = lastBlock.hash;
+		const hash = 'todo-hash';
+
+		return new this(timestamp, lastHash, hash, data);
+
+
 	}
 }
 
