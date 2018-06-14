@@ -1,8 +1,7 @@
-#Build Your Own BlockChain Using Nodejs
+# Build Your Own BlockChain Using Nodejs
 
-#Prerequisites
+# Prerequisites
 1. You will need a command line application. For MacOS and Linux, I recommend the native Terminal application. Iterm2 is also a good option on MacOS. For Windows, I recommend using the Git Bash shell application.
-
 
 2. I use NodeJS as the engine to run our JavaScript-based project. Make sure you have Node and nmp installed on your system.
 
@@ -14,5 +13,22 @@ v8.11.3 (or something similar)
 $nmp -v
 5.6.0 (or something similar)
 ```
-I use a tool called Postman. This app allow us to send custom HTTP Requests to our running blockchain servers.
+3. I use a tool called Postman. This app allow us to send custom HTTP Requests to our running blockchain servers.
 Here is the link to install Postman: https://www.getpostman.com/docs/postman/launching_postman/installation_and_updates
+
+# Installing
+To run in 
+
+```
+cd build-blochain
+
+npm run blockchain
+```
+
+# Running the tests
+ 
+ You could run the *.test.js using the jest with is a module of nodejs.
+ ```
+ cd build-blockchain
+ npm run test
+ ```
