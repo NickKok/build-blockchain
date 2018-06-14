@@ -40,4 +40,18 @@ describe('Blockchain', ()=> {
     expect(bc.isValidChain(bc2.chain)).toBe(false);
   });
 
+  it('replace a chain with a valid chain', ()=> {
+    bc2.addBlock('goo');
+    bc.replaceChain(bc2.chain);
+
+    expect(bc.chain).toEqual(bc2.chain);
+  });
+
+  it('does not replace the chain with one less than or equal to length of chain.', ()=> {
+    bc.addBlock('foo');
+    bc.replaceChain(bc2.chain);
+
+    expect(bc.chain).not.toEqual(bc2.chain);
+  });
+
 });
