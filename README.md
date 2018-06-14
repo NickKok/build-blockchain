@@ -1,5 +1,6 @@
-# build-blockchain
-Software Requirements:
+#Build Your Own BlockChain Using Nodejs
+
+#Prerequisites
 1. You will need a command line application. For MacOS and Linux, I recommend the native Terminal application. Iterm2 is also a good option on MacOS. For Windows, I recommend using the Git Bash shell application.
 
 
