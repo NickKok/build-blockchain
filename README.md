@@ -31,9 +31,9 @@ Or Use  postman  to make a post request on: localhost:3001/mine having on the bo
 like
 
 ```
-[
+{ 
 "data":"Some Data over Here"
-]
+}
 
 ```
 
@@ -57,7 +57,7 @@ and we get as response
 ```
 
 
-To run the Websocket and creat peers on in open a terminal and run
+To run the Websocket and create peers on open a terminal and run
 
 ```
 $ nmp run dev
@@ -81,6 +81,7 @@ Follow the previous steps to create as many as you want.
 # Running the tests
 
  You could run the *.test.js using the jest with is a module of nodejs.
+
  ```
  cd build-blockchain
  npm run test
