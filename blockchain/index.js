@@ -1,3 +1,5 @@
+//Blockchain Class 
+
 const Block = require('./block');
 
 class Blockchain {
