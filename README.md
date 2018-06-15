@@ -37,6 +37,47 @@ like
 
 ```
 
+and we get as response
+
+```
+[
+    {
+        "timestamp": "Genesis time",
+        "lastHash": "-------",
+        "hash": "f1r57-h45h",
+        "data": []
+    },
+    {
+        "timestamp": 1529053407902,
+        "lastHash": "f1r57-h45h",
+        "hash": "549b93e4e96d9f9e683910bdbe3ed5fbcfa49932eee22782a008daeb463fc530",
+        "data": "Some Data over Here"
+    }
+]
+```
+
+
+To run the Websocket and creat peers on in open a terminal and run
+
+```
+$ nmp run dev
+```
+Now we have the first socket. Next open an new terminal and run again
+
+```
+$ HTTP_PORT=3002 P2P_PORT=5002 PEERS=ws://localhost:5001 npm run dev
+```
+So now you will see "Socket connected". So on our networks we have two peers.
+
+For the next one open a new terminal and run
+
+```
+$ HTTP_PORT=3003 P2P_PORT=5003 PEERS=ws://localhost:5001,ws://localhost:5002 npm run dev
+```
+
+Follow the previous steps to create as many as you want.
+
+
 # Running the tests
 
  You could run the *.test.js using the jest with is a module of nodejs.
