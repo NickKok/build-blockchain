@@ -17,16 +17,28 @@ $nmp -v
 Here is the link to install Postman: https://www.getpostman.com/docs/postman/launching_postman/installation_and_updates
 
 # Installing
-To run in 
+To run in
 
 ```
 cd build-blochain
 
-npm run blockchain
+npm run dev
+```
+Check out the this link on your browser or on postman : localhost:3001/blocks (GET) request to the blocks in the Block chain
+
+Or Use  postman  to make a post request on: localhost:3001/mine having on the body json data
+
+like
+
+```
+[
+"data":"Some Data over Here"
+]
+
 ```
 
 # Running the tests
- 
+
  You could run the *.test.js using the jest with is a module of nodejs.
  ```
  cd build-blockchain
