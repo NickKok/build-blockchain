@@ -33,6 +33,26 @@ describe('Transaction', ()=>{
     expect(Transaction.verifyTransaction(transaction)).toBe(false);
   });
 
+  describe('updating a transaction', () => {
+    let nextAmount, nextRecipient;
+
+    beforeEach( ()=> {
+      nextAmount= 20;
+      nextRecipient='n3xt-4ddr355';
+      transaction = transaction.update(wallet, nextRecipient, nextAmount);
+    });
+
+    it('subtracts the next Amount from the sender output', ()=> {
+        expect(transaction.outputs.find(output => output.address === wallet.publicKey).amount).toEqual(wallet.balance - amount- nextAmount);
+    });
+
+    it('outputs the amount for the next recipient', ()=> {
+      expect(transaction.outputs.find(output => output.address === nextRecipient).amount).toEqual(nextAmount);
+    });
+
+  });
+
+
 });
 
 describe('Transaction with an amount that exceeds the balance', ()=>{
