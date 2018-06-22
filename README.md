@@ -31,7 +31,7 @@ Or Use  postman  to make a post request on: localhost:3001/mine having on the bo
 like
 
 ```
-{ 
+{
 "data":"Some Data over Here"
 }
 
@@ -77,6 +77,133 @@ $ HTTP_PORT=3003 P2P_PORT=5003 PEERS=ws://localhost:5001,ws://localhost:5002 npm
 
 Follow the previous steps to create as many as you want.
 
+
+To get the publickey each user there is a GET request using this link
+
+"localhost:3001/public-key"  where the port is the listening port of each client
+as a response we get:
+
+```
+{
+    "publicKey":"041f96e0c5eff595362e6eadc95d849b6641297ca01958f086d9f270bb98b663e426bd1846eec2de44f86fda0087852c9ecf7a575ede4e9b6f65caed8cfeee2220"
+}
+```
+
+Also to get the transactions of the Blockchain there is a GET request using this link
+"localhost:3001/transactions".
+
+At first you will get as response  an empty array. like
+
+```
+[]
+```
+
+Using Postman you can make a post request at "localhost:3001/transact" and as a body use
+JSON schema
+
+```
+{
+
+	"recipient": "foo",
+	"amount": 50
+
+}
+```
+ So after this from the it call automatical the GET method and we have as response
+
+ ```
+ [
+     {
+         "id": "256910c0-75f5-11e8-8993-f940b898d961",
+         "input": {
+             "timestamp": 1529655875235,
+             "amount": 500,
+             "address": "0492796237568b408978d9bae0b13d5ffcbfce61ee1e8cf5c944745c7118bbf7f47c69ad2b4703474a516bda2dd895d914c01602c64dac3aa3eff93ad7ee7be83d",
+             "signature": {
+                 "r": "1764104b3a2e1c478ae28e791e917852a5dcc433f7bb990cb9a062a44dd5d22c",
+                 "s": "552bf6d33a8feb2784897a9890e3593591f668e64264e021a7d0d0758ed7459b",
+                 "recoveryParam": 1
+             }
+         },
+         "outputs": [
+             {
+                 "amount": 450,
+                 "address": "0492796237568b408978d9bae0b13d5ffcbfce61ee1e8cf5c944745c7118bbf7f47c69ad2b4703474a516bda2dd895d914c01602c64dac3aa3eff93ad7ee7be83d"
+             },
+             {
+                 "amount": 50,
+                 "address": "foo"
+             },
+
+         ]
+     }
+]
+ ```
+
+ You could try this creating with terminal lots of sockets to be connected together as previous and make some transactions like
+
+```
+[
+    {
+        "id": "256910c0-75f5-11e8-8993-f940b898d961",
+        "input": {
+            "timestamp": 1529655875235,
+            "amount": 500,
+            "address": "0492796237568b408978d9bae0b13d5ffcbfce61ee1e8cf5c944745c7118bbf7f47c69ad2b4703474a516bda2dd895d914c01602c64dac3aa3eff93ad7ee7be83d",
+            "signature": {
+                "r": "1764104b3a2e1c478ae28e791e917852a5dcc433f7bb990cb9a062a44dd5d22c",
+                "s": "552bf6d33a8feb2784897a9890e3593591f668e64264e021a7d0d0758ed7459b",
+                "recoveryParam": 1
+            }
+        },
+        "outputs": [
+            {
+                "amount": 300,
+                "address": "0492796237568b408978d9bae0b13d5ffcbfce61ee1e8cf5c944745c7118bbf7f47c69ad2b4703474a516bda2dd895d914c01602c64dac3aa3eff93ad7ee7be83d"
+            },
+            {
+                "amount": 50,
+                "address": "foo"
+            },
+            {
+                "amount": 50,
+                "address": "foo"
+            },
+            {
+                "amount": 50,
+                "address": "foo"
+            },
+            {
+                "amount": 50,
+                "address": "foo"
+            }
+        ]
+    },
+    {
+        "id": "91e60b90-75f5-11e8-b69f-c7860ad0bf18",
+        "input": {
+            "timestamp": 1529655821001,
+            "amount": 500,
+            "address": "042e6ae525f479eb6df39179682ba223984e36d24939179806b3ec73721a2d6b4dd223fe52f7058310fbe213c44f9e33af3d9005bbc02d3563f8384d62faa08e95",
+            "signature": {
+                "r": "60ef147b0376463938ea219ea01bc10f6bddbdef544f11e1cf7ae7611ef92fc4",
+                "s": "2b08bee3e9ea49ffab212290cf34e44d241279ed3d5b63bcd9a3776042fb0984",
+                "recoveryParam": 0
+            }
+        },
+        "outputs": [
+            {
+                "amount": 400,
+                "address": "042e6ae525f479eb6df39179682ba223984e36d24939179806b3ec73721a2d6b4dd223fe52f7058310fbe213c44f9e33af3d9005bbc02d3563f8384d62faa08e95"
+            },
+            {
+                "amount": 100,
+                "address": "bar"
+            }
+        ]
+    }
+]
+```
 
 # Running the tests
 
