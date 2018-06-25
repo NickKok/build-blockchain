@@ -205,7 +205,7 @@ JSON schema
 ]
 ```
 
-After that you coud make a GET to "localhost:3002/mine-transactios" so the persone that creat the block will get the MINING_REWARD and to clear the transactions array for the next block calculation as respone to this GET is the block in the blockchain:
+After that you could make a GET to "localhost:3002/mine-transactios" so the person that create the block will get the MINING_REWARD and to clear the transactions array for the next block calculation as response to this GET is the block in the blockchain:
 
 ```
 [
