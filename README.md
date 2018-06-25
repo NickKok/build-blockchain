@@ -205,6 +205,107 @@ JSON schema
 ]
 ```
 
+After that you coud make a GET to "localhost:3002/mine-transactios" so the persone that creat the block will get the MINING_REWARD and to clear the transactions array for the next block calculation as respone to this GET is the block in the blockchain:
+
+```
+[
+    {
+        "timestamp": "Genesis time",
+        "lastHash": "-------",
+        "hash": "f1r57-h45h",
+        "data": [],
+        "nonce": 0,
+        "difficulty": 4
+    },
+    {
+        "timestamp": 1529932496628,
+        "lastHash": "f1r57-h45h",
+        "hash": "000371a604c507a71159e952cf3f1d300b3cb3b89f0648d433a2abac3a50c19b",
+        "data": [
+            {
+                "id": "c164e130-7879-11e8-88cb-4756b330b237",
+                "input": {
+                    "timestamp": 1529932496579,
+                    "amount": 500,
+                    "address": "04bb40c18b94c3358d8985bdf16cdf669997c8ef7388fa8140e4ec1fbce73d6c77408972df2bdcf976d66adc6bc3dfeccb8cd7a7ce7a46762a3c2aa054c23fc485",
+                    "signature": {
+                        "r": "22c96a637d31174160d095314884760bf40b96754b101e0a672ac6ee852497a5",
+                        "s": "a6875331c60cf08274e1a1483fe5bcaf37c5a7f42345d6c6f92eeb844581a158",
+                        "recoveryParam": 0
+                    }
+                },
+                "outputs": [
+                    {
+                        "amount": 50,
+                        "address": "046087bb685d56dd01bd11f4f3d50ab7022cbaca67c636f527665442f7e88153434d04146108e47e1e788dd9b969477cfad8582aeb8592ff0b02f0d17b19c8dd8c"
+                    }
+                ]
+            }
+        ],
+        "nonce": 419,
+        "difficulty": 3
+    },
+    {
+        "timestamp": 1529932524460,
+        "lastHash": "000371a604c507a71159e952cf3f1d300b3cb3b89f0648d433a2abac3a50c19b",
+        "hash": "00390f8e541b2fbb3b86c14c5675384e7868b30a3309f13e325ee316231527ac",
+        "data": [
+            {
+                "id": "ce7d8a70-7879-11e8-8ced-d38cdc095052",
+                "input": {
+                    "timestamp": 1529932519578,
+                    "amount": 500,
+                    "address": "0479bfc9553fc45e239e8d49bdef52f1a44f47dda0692320936b1082d89690991e176776c34883b33069ab04ff7f655742d16feb36445a8627ad5f8de52b4bdf04",
+                    "signature": {
+                        "r": "aa07966c3bf793673777c66aee1b79fc716a02b1dfd4e3f1bb6e32b8f9c7d53c",
+                        "s": "d7509d7a9438a4bc98ee2a24ff273cd2f1e8b036d6f1d5787b49b7b97aadd88b",
+                        "recoveryParam": 1
+                    }
+                },
+                "outputs": [
+                    {
+                        "amount": 440,
+                        "address": "0479bfc9553fc45e239e8d49bdef52f1a44f47dda0692320936b1082d89690991e176776c34883b33069ab04ff7f655742d16feb36445a8627ad5f8de52b4bdf04"
+                    },
+                    {
+                        "amount": 30,
+                        "address": "foo-address"
+                    },
+                    {
+                        "amount": 30,
+                        "address": "foo-address"
+                    }
+                ]
+            },
+            {
+                "id": "d2026b70-7879-11e8-88cb-4756b330b237",
+                "input": {
+                    "timestamp": 1529932524455,
+                    "amount": 500,
+                    "address": "044cb07473936d3b852b3aee25b40838fca1b78be8de94f45cedc1d990592050a8edfc9688b7170018ad1aeb5f7c4a3c257170344814107ef7e60c6aa8cb12ae77",
+                    "signature": {
+                        "r": "c65f343f3b5a18fa5a56cb2a0ce79b2024c305a2d9f3ff3ed10fec1010f883de",
+                        "s": "c6c806317d7874b28fbd0d1bb5ac770093e4c7e2ab9c8526dd3b4a85cdf329ce",
+                        "recoveryParam": 0
+                    }
+                },
+                "outputs": [
+                    {
+                        "amount": 50,
+                        "address": "046087bb685d56dd01bd11f4f3d50ab7022cbaca67c636f527665442f7e88153434d04146108e47e1e788dd9b969477cfad8582aeb8592ff0b02f0d17b19c8dd8c"
+                    }
+                ]
+            }
+        ],
+        "nonce": 10,
+        "difficulty": 2
+    }
+]
+
+```
+
+
+
 # Running the tests
 
  You could run the *.test.js using the jest with is a module of nodejs.
