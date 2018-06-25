@@ -21,6 +21,7 @@ class Miner {
     //clear the transactionPool
     this.transactionPool.clear();
     //broadcast to every miner to clear their transaction pools
+    this.p2pServer.broadcastClearTransactions();
   }
 }
 
